@@ -26,9 +26,9 @@
 1. `modules/Models` бросает событие **`tmpLoadGltf`** в `Engine/systems/Graphics`.
 1. `modules/Decor/Placement` выравнивает модель с помощью `modules/Decor/Lair` и инициирует событие **`plcDecorAdd`**.
 1. Далее `modules/Decor/Placement`:
-   - ждёт от `systems/Selector` смены активного 3D‑меша;
-   - отправляет событие **`grRaySetByPlane`**;
-   - переходит в режим **PLACE**.
+   1. ждёт от `systems/Selector` смены активного 3D‑меша;
+   1. отправляет событие **`grRaySetByPlane`**;
+   1. переходит в режим **PLACE**.
 1. `Engine/systems/Graphics/Raycast` задаёт поверхность для размещения.
 1. В режиме **PLACE** `modules/Decor/Placement` (подписка на `mouseMove`) двигает меш по квартире.
 1. На `mouseClick` — если режим **PLACE**, перемещение завершается.
