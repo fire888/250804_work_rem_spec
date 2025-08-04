@@ -9,6 +9,8 @@
 
 ## 2. Примеры сценариев поведения
 
+---
+
 **2.1 Сдвиг текстуры пользователем**
 
 1. [systems/**UserInterface**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/UserInterface.js?ref_type=heads) вешает событие на инпут и при изменении пользователем свойства дергает метод в **PanelMaterials**  
@@ -41,7 +43,9 @@
 
 ### 3 Классы 
 
-#### 3.1 Основные файлы
+**3.1 Основные файлы**
+
+---
 
 [**Remplanner3D**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/RPlanner3D.js?ref_type=heads)
 - Точка точка входа в приложение
@@ -65,7 +69,9 @@
 - Все `systems` изолированы и общаются через **медиатор**.
 
 
-#### 3.2 Modules создаваемые в [Remplanner3D](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/RPlanner3D.js?ref_type=heads)
+**3.2 Modules создаваемые в [Remplanner3D](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/RPlanner3D.js?ref_type=heads)**
+
+---
 
 [modules/**Application**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Application.js?ref_type=heads)	
 - создается точкой входа Remplanner3D
@@ -143,7 +149,9 @@
 - создает экземпляры modules/Walls, modules/Ceiling, modules/Portal, modules/Interior, modules/Floor, modules/PlinthsFloor, modules/PlinthsCeiling
 
 
-#### 3.3 Modules создаваемые в `modules/Apartments`
+**3.3 Modules создаваемые в `modules/Apartments`**
+
+---
 
 [modules/**Wall**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Wall/Wall.js?ref_type=heads) 
 - создается в modules/Apartments
@@ -202,16 +210,18 @@
 - хранит данные о потолках
 
 
-## 3.4 Modules статические, нигде не создаются работают без контекста  
+**3.4 Modules статические, нигде не создаются работают без контекста**
 
+---
 
 [modules/**Model**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Model/Model.js?ref_type=heads) 
 - создатель мешей
 - `.load()` запрашивает в [modules/**Registry**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Registry.js?ref_type=heads) данные материала, подгружает меш, добавляет в сцену 
 
 
-## 3.5 Systems живут изолированно, общаются через медиатор, создаются из remplanner-cfg в Engine
+**3.5 Systems живут изолированно, общаются через медиатор, создаются из remplanner-cfg в Engine**
 
+---
 
 [systems/**UserInterface**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/UserInterface.js?ref_type=heads) <a id="user-interface-anchor"> 
 - инитится через remplanner-cfg кнопочная обвязка
@@ -243,15 +253,17 @@
 - обрезает квартиру по высоте в режиме просмотра 1м 
 
 
-## 3.6 Описание [Engine](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/Engine.js?ref_type=heads)
+**3.6 Описание [Engine](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/Engine.js?ref_type=heads)**
 
+---
 
 [Engine](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/Engine.js?ref_type=heads) 
 - [описание_выше](#engine-anchor) 
 
 
-## 3.7 Engine/systems экземпляры живут изолированно, общение-медиатор, создаются из remplanner-cfg в Engine
+**3.7 Engine/systems экземпляры живут изолированно, общение-медиатор, создаются из remplanner-cfg в Engine**
 
+---
 
 [Engine/systems/**NavigatorFPerson**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/systems/NavigatorFPerson/NavigatorFPerson.js?ref_type=heads)  
 - инитится через remplanner-cfg
@@ -305,8 +317,9 @@
 - Набор методов для выбора 3д модели под мышью
 
 
-## 3.8 systems/UserInterface более подробное.
+**3.8 systems/UserInterface более подробное**
 
+---
 
 [systems/**UserInterface**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/UserInterface.js?ref_type=heads) 
 - [описание выше](#user-interface-ancho)
