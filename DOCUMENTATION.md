@@ -243,11 +243,25 @@
 - обрезает квартиру по высоте в режиме просмотра 1м 
 
 
-## ОПИСАНИЕ [Engine](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/Engine.js?ref_type=heads)
+## 3.6 Описание [Engine](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/Engine.js?ref_type=heads)
 
 
 [Engine](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/Engine.js?ref_type=heads) 
 - [описание_выше](#engine-anchor) 
+
+
+## 3.7 Engine/systems экземпляры живут изолированно, общение-медиатор, создаются из remplanner-cfg в Engine
+
+
+[Engine/systems/**NavigatorFPerson**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/systems/NavigatorFPerson/NavigatorFPerson.js?ref_type=heads)  
+- инитится через remplanner-cfg
+- слушает вводы пользователя
+- двигает камеру
+
+
+
+
+
 
 ## 7. Аббревиатуры событий медиатора
 
