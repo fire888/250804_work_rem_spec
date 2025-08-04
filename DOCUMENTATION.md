@@ -10,8 +10,7 @@
 
 **2.1 Сдвиг текстуры пользователем**
 
-1. Пользователь меняет сдвиг текстуры.
-1. [systems/**UserInterface**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/UserInterface.js?ref_type=heads) вешает событие на инпут и при изменении свойства дергает метод в **PanelMaterials**  
+1. [systems/**UserInterface**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/UserInterface.js?ref_type=heads) вешает событие на инпут и при изменении пользователем свойства дергает метод в **PanelMaterials**  
 1. [systems/UserInterface/sections/**PanelMaterials**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/sections/PanelMaterials.js?ref_type=heads) запрашивает у [systems/**Selector**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/Selector/Selector.js?ref_type=heads) текущий фокус и отправляет событие *skinChangeTexture* медиатору.
 1. [modules/**Skin**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Skin/Skin.js?ref_type=heads) перехватывает событие и передаёт его в **Entities**.
 1. [system/Graphics/**Entities**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/systems/Graphics/Entities.js?ref_type=heads) меняет материал с помощью [system/Graphics/**Materials**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/systems/Graphics/Materials.js?ref_type=heads).
