@@ -259,6 +259,58 @@
 - двигает камеру
 
 
+[Engine/systems/**Graphics**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/systems/Graphics/Graphics.js?ref_type=heads)  
+- инитится через remplanner-cfg
+- подключает всю графику к медиатору 
+
+
+	[Engine/systems/Graphics/**SharedData**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/systems/Graphics/SharedData.js?ref_type=heads)
+	- Статически хранит все меши в открытом доступе 
+
+
+	[Engine/systems/Graphics/**Meshes**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/systems/Graphics/Meshes.js?ref_type=heads)
+	- методы медиатора через Engine/systems/Graphics
+	- `.create(options)`  
+		- по данным создает геометрию в Graphics/Geometries, 
+		- по данным создает материал в Graphics/Materials, 
+		- создает меш, 
+		- добавляет меш в сцену через Graphics/Entities
+		- регистрирует в Graphics/SharedData  
+		`options.userData.fixed = true` меш не чекается селектором
+		`options.userData.rayObstruct = true` сквозь меш нельзя выбрать предмет 
+		`options.userData.entity.roomId = ‘room_id_mesh_in’` скрывает меш при покомнатном просмотре не принадлежащий текущей комнате
+		`options.name = ‘mesh_unique_name’` служит для применения сохраненного пользователем материала при перезагрузке 
+		`options.material.saveKey = [‘mesh_unique_name’, ‘mesh_unique_name_2’]` применяет при перезагрузке материалы к мешам по имени
+		`options.material.presetId = ‘1262’` значение это ключ из хранилища Registry.#materials
+		`options.material.group = ‘group_unique_name’` при изменении материала у одного члена группы с этим айди, меняется материал у всех   
+		`THREE.Group.name = ‘group_name’` 
+
+
+
+Engine/systems/Graphics/SceneBasics методы медиатора через Engine/systems/Graphics
+Набор методов для создания и добавления в сцену вспомогательных объектов
+(Groups, Helpers, Lights..) 
+
+Engine/systems/Graphics/Entities методы медиатора через Engine/systems/Graphics
+Набор методов для трансформации мешей, замены их геометрии и материалов, добавления к родителю. Каждый метод получает данные, берет меш из Graphics/SharedData и изменяет его.
+
+Engine/systems/Graphics/Geometries методы медиатора через Engine/systems/Graphics
+Набор методов для создания и модификации геометрии
+
+Engine/systems/Graphics/Materials методы медиатора через Engine/systems/Graphics
+Набор методов для создания и модификации материалов
+
+	Engine/systems/Graphics/Raycast методы медиатора через Engine/systems/Graphics
+Набор методов для выбора 3д модели под мышью
+
+
+ОПИСАНИЕ systems/UserInterface.
+
+systems/UserInterface описание выше
+
+systems/UserInterface/Elements
+Набор методов для модификации html, общие для всего UserInterface
+
 
 
 
