@@ -205,7 +205,8 @@
 ## 3.4 Modules статические, нигде не создаются работают без контекста  
 
 
-[modules/**Model**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Model/Model.js?ref_type=heads) создатель мешей
+[modules/**Model**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Model/Model.js?ref_type=heads) 
+	- создатель мешей
 	- `.load()` запрашивает в [modules/**Registry**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Registry.js?ref_type=heads) данные материала, подгружает меш, добавляет в сцену 
 
 
