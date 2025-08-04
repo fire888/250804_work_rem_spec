@@ -40,21 +40,19 @@
 
 ### 3.1. [Remplanner3D](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/RPlanner3D.js?ref_type=heads)
 - Точка точка входа в приложение
-- Читает [**RPlanner3D-cfg**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/RPlanner3D-cfg.js?ref_type=heads) приложения.
+- Читает сонфог [**RPlanner3D-cfg**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/RPlanner3D-cfg.js?ref_type=heads) приложения.
 - Создаёт экземпляры:
+   - [modules/**Application**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Application.js?ref_type=heads)
+   - [modules/**Registry**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Registry.js?ref_type=heads)
+   - [modules/**Project**]
+   - [modules/**Mode**]
+   - [modules/**Decor**]
+   - [modules/**Skin**]
+   - [modules/**Entourage**]
+   - [modules/**Apartments**]
+   - [modules/**Spatium**]
+   - [**Engine**]
 
-```
-modules/Application
-modules/Registry
-modules/Project
-modules/Mode
-modules/Decor
-modules/Skin
-modules/Entourage
-modules/Apartments
-modules/Spatium
-Engine
-```
 
 ### 3.2. **Engine**
 
