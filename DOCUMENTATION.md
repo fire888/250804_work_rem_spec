@@ -172,8 +172,8 @@
    	- создает, добавляет верх стен
 
 
-      	[modules/Wall/Generators/**WallGlass**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Wall/Generators/WallGlass.js?ref_type=heads)
-  	- создает, добавляет стеклянные стены  
+	[modules/Wall/Generators/**WallGlass**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Wall/Generators/WallGlass.js?ref_type=heads)
+	- создает, добавляет стеклянные стены  
 
 
 	[modules/Wall/**WallGeometry**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Wall/WallGeometry.js?ref_type=heads)
