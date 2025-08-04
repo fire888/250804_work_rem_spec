@@ -194,15 +194,23 @@
 
 	[modules/Portal/**PortalSlopes**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Portal/PortalSlopes.js?ref_type=heads)
 	- набор статических методов создания откосов
+
    
+[modules/**Ceiling**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Ceiling/Ceiling.js?ref_type=heads) 
+- создается в modules/Apartments
+- создает потолки
+- хранит данные о потолках
 
 
+## 3.4 Modules статические, нигде не создаются работают без контекста  
 
 
-- **Portal**
-  - `PortalFrame`, `PortalSlopes` — окна, двери, проёмы
-- **Ceiling** — потолки
-- … и др.
+[modules/**Model**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Model/Model.js?ref_type=heads) создатель мешей
+	- `.load()` запрашивает в [modules/**Registry**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Registry.js?ref_type=heads) данные материала, подгружает меш, добавляет в сцену 
+
+
+## 3.5 Systems живут изолированно, общаются через медиатор, создаются из remplanner-cfg в Engine
+
 
 ---
 
