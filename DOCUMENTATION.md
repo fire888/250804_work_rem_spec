@@ -11,7 +11,7 @@
 **2.1 Сдвиг текстуры пользователем**
 
 1. Пользователь меняет сдвиг текстуры.
-1. **[systems/UserInterface/panels/PanelMaterials](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/sections/PanelMaterials.js?ref_type=heads)**`systems/UserInterface/sections/PanelMaterials` слушает изменение и обновляет своё состояние.
+1. [systems/UserInterface/panels/**PanelMaterials**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/sections/PanelMaterials.js?ref_type=heads) слушает изменение и обновляет своё состояние.
 1. Панель проверяет текущий фокус элемента через `systems/Selector` и отправляет событие **`skinChangeTexture`** медиатору.
 1. `modules/Skin` перехватывает событие и передаёт его в `system/Graphics/Entities`.
 1. `system/Graphics/Entities` меняет материал с помощью `system/Graphics/Materials`.
