@@ -25,15 +25,15 @@
 1. [modules/**Models**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Model/Model.js?ref_type=heads) бросает событие *tmpLoadGltf* в [Engine/systems/Graphics](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/systems/Graphics/Graphics.js?ref_type=heads).
 1. [modules/Decor/**Placement**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Decor/Placement/Placement.js?ref_type=heads) выравнивает модель с помощью [modules/Decor/**Lair**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Decor/Lair.js?ref_type=heads) и инициирует событие *plcDecorAdd*.
 1. Далее [modules/Decor/**Placement**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Decor/Placement/Placement.js?ref_type=heads):
-   1. ждёт от [systems/**Selector**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/Selector/Selector.js?ref_type=heads) смены активного 3D‑меша;
-   1. отправляет событие *grRaySetByPlane*;
-   1. переходит в режим *PLACE*.
+   - ждёт от [systems/**Selector**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/Selector/Selector.js?ref_type=heads) смены активного 3D‑меша;
+   - отправляет событие *grRaySetByPlane*;
+   - переходит в режим *PLACE*.
 1. [Engine/systems/Graphics/Raycast](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/systems/Graphics/Raycast.js?ref_type=heads) задаёт поверхность для размещения.
 1. В режиме **PLACE** [modules/Decor/**Placement**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Decor/Placement/Placement.js?ref_type=heads) (подписка на `mouseMove`) двигает меш по квартире.
-1. На `mouseClick` — если режим **PLACE**, перемещение завершается.
-1. На `mouseDown` — если режим **NONE**, добавляется круг поворота.
-1. В режиме **ROTATE** `mouseMove` вращает меш.
-1. На `mouseUp` генерируется событие **`prjChange`** (сохранить проект).
+   - На `mouseClick` — если режим **PLACE**, перемещение завершается.
+   - На `mouseDown` — если режим **NONE**, добавляется круг поворота.
+   - В режиме **ROTATE** `mouseMove` вращает меш.
+   - На `mouseUp` генерируется событие **`prjChange`** (сохранить проект).
 1. [modules/**Project**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Project/Project.js?ref_type=heads) фиксирует изменение проекта.
 
 ## 3. Архитектура приложения
