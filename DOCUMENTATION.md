@@ -38,9 +38,9 @@
 
 ## 3. Архитектура приложения
 
-### 3.1. Точка входа — `Remplanner3D`
-
-- Читает `config` приложения.
+### 3.1. [Remplanner3D](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/RPlanner3D.js?ref_type=heads)
+- Точка точка входа в приложение
+- Читает [**RPlanner3D-cfg**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/RPlanner3D-cfg.js?ref_type=heads) приложения.
 - Создаёт экземпляры:
 
 ```
