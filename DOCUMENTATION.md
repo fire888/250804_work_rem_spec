@@ -115,7 +115,12 @@
     [modules/Decor/**Lair**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Decor/Lair.js?ref_type=heads)
     - отвечает за поверхности для размещения декора
   
-
+[modules/**Skin**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Skin/Skin.js?ref_type=heads) 
+- создается точкой входа Remplanner3D
+- из проекта пользователя сигналит в сцену создать материалы
+  - `options.saveKey` - ключ по которому материал ищется в сохраненном проекте пользователя и сохраняется если не находится и возвращается
+  - `options.presetId` - если options.saveKey не находит материал то материал берется из [modules/Skin/**Presets**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Skin/Presets.js?ref_type=heads) 
+  - `#create(options)` ищет материал в сохраненном проекте пользователя, если находит то берет дефолтный материал из [modules/**Registry**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Registry.js?ref_type=heads) и применяет к нему cохраненные настройки, если не находит то берет материал из [modules/Skin/**Presets**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Skin/Presets.js?ref_type=heads) и сохраняет в проекте кастомные настройки.
 
 | Модуль | Назначение / особенности |
 |--------|-------------------------|
