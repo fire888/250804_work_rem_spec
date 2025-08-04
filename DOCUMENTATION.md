@@ -29,7 +29,7 @@
    - отправляет событие *grRaySetByPlane*;
    - переходит в режим *PLACE*.
 1. [Engine/systems/Graphics/Raycast](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/systems/Graphics/Raycast.js?ref_type=heads) задаёт поверхность для размещения.
-1. В режиме **PLACE** [modules/Decor/**Placement**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Decor/Placement/Placement.js?ref_type=heads) (подписка на `mouseMove`) двигает меш по квартире.
+1. [modules/Decor/**Placement**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Decor/Placement/Placement.js?ref_type=heads) в режиме **PLACE**  (подписка на `mouseMove`) двигает меш по квартире.
    - На `mouseClick` — если режим **PLACE**, перемещение завершается.
    - На `mouseDown` — если режим **NONE**, добавляется круг поворота.
    - В режиме **ROTATE** `mouseMove` вращает меш.
