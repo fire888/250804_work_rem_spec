@@ -213,44 +213,41 @@
 ## 3.5 Systems живут изолированно, общаются через медиатор, создаются из remplanner-cfg в Engine
 
 
----
+[systems/**UserInterface**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/UserInterface.js?ref_type=heads) 
+- инитится через remplanner-cfg кнопочная обвязка
+- создает боковые панели [systems/UserInterface/sections](https://gitlab.com/remplanner/visual/-/tree/master/js/3d/src/systems/UserInterface/sections?ref_type=heads)
+- создает миникарту 
+….
+- через [systems/UserInterface/**InterfaceActions**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/InterfaceActions.js?ref_type=heads) сигналит медиатору о событиях UI
 
-## 4. Systems
 
-Все **systems** создаются Engine‑ом из `remplanner-cfg`, живут изолированно и общаются через медиатор.
+[systems/**Debug**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/Debug/Debug.js?ref_type=heads) 
+- инитится через remplanner-cfg
+- методы и ui дебага
 
-| System | Функции |
-|--------|---------|
-| `systems/UserInterface` | Инициализация UI, создание панелей (`/panels`), мини‑карты и т.п.; через `InterfaceActions` отправляет события. |
-| `systems/Debug` | Инструменты отладки. |
-| `systems/Walker` | Активация вида от первого лица (`Engine/systems/NavigatorFPerson`), коллизии порталов. |
-| `systems/Selector` | Текущий фокус на элементе; игнорирует `userData.fixed = true`. |
-| `systems/BareRoom` | Обрезает квартиру по высоте (режим 1 м). |
 
----
+[systems/**Walker**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/Walker/Walker.js?ref_type=heads) 
+- инитится через remplanner-cfg
+- активирует через медиатор Engine/systems/NavigatorFPerson
+- хранит данные о порталах коллизиях в квартире
 
-## 5. Engine / Graphics
 
-- `Engine/systems/Graphics` подключает графику к медиатору и хранит общие данные.
-- **SharedData** — статическое хранилище всех мешей.
-- **Mesh API** (`Graphics/Mesh`):
-  - `options.userData.fixed` — игнорировать селектором
-  - `options.userData.rayObstruct` — меш блокирует выбор
-  - `options.userData.entity.roomId` — скрывать меш вне комнаты
-  - `options.name` — уникальное имя для восстановления материалов
-  - `options.material.*` — сохранение / применение материалов
-  - Метод `.create(options)` генерирует геометрию, материал, меш, добавляет его в сцену и регистрирует.
+[systems/**Selector**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/Selector/Selector.js?ref_type=heads)
+- инитится через remplanner-cfg
+- хранит текущий фокус на элементе 
+- выбирает элемент если в его меше свойства `userData.fixed = false`
 
-Также доступны модули `SceneBasics`, `Entities`, `Geometries`, `Materials`, `Raycast`.
 
----
+[systems/**BareRoom**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/BareRoom/BareRoom.js?ref_type=heads)
+- инитится через remplanner-cfg
+- обрезает квартиру по высоте в режиме просмотра 1м 
 
-## 6. UserInterface ― детали
 
-- `systems/UserInterface/Elements` ― утилиты для работы с HTML.
-- Панели хранятся в `systems/UserInterface/panels`.
+## ОПИСАНИЕ [Engine](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/Engine.js?ref_type=heads)
 
----
+
+[Engine](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/Engine.js?ref_type=heads) 
+- [описание_выше](### 3.1 Основные узлы) 
 
 ## 7. Аббревиатуры событий медиатора
 
