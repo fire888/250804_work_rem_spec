@@ -75,6 +75,11 @@
 - Реестр данных для моделей для добавления в квартиру пользователя. `**window.global_visual_data**` - серверные данные зашитые в страницу с бэка 
 - Отдает верстку для [systems/**UserInterface**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/UserInterface.js?ref_type=heads) каталогов элементов 
 
+[modules/**Project**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Project/Project.js?ref_type=heads) 
+- создается точкой входа Remplanner3D
+- создает класс [modules/Project/**ProjectSource**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Project/ProjectSource.js?ref_type=heads) в котором происходит загрузка и валидация проекта пользователя
+- хранит данные проекта квартиры пользователя
+
 
 | Модуль | Назначение / особенности |
 |--------|-------------------------|
