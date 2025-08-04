@@ -38,7 +38,7 @@
 
 ## 3. Архитектура приложения
 
-### [Remplanner3D](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/RPlanner3D.js?ref_type=heads)
+> [**Remplanner3D**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/RPlanner3D.js?ref_type=heads)
 - Точка точка входа в приложение
 - Читает сонфиг [**RPlanner3D-cfg**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/RPlanner3D-cfg.js?ref_type=heads) приложения.
 - Создаёт экземпляры:
@@ -60,18 +60,18 @@
 - По конфигу [**RPlanner3D-cfg**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/RPlanner3D-cfg.js?ref_type=heads) создаёт все **systems** (например `systems/**UserInterface**`).
 - Все `systems` изолированы и общаются через **медиатор**.
 
-### **Modules**, создаваемые в `Remplanner3D`
+### Modules создаваемые в `Remplanner3D`
 
-### [modules/**Application**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Application.js?ref_type=heads)	
+### [modules/Application](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Application.js?ref_type=heads)	
 - создается точкой входа Remplanner3D
 - хранит права пользователя
 - слушает ошибки приложения, отсылает на сервер репорты об ошибках  
 - создает эффекты постпроцессинга в зависимости от аппаратной поддержки 
 - `.isSandbox` = window['rplanner_sandbox'] флаг не слать алерты на реальный сервер
 
-### [modules/**Registry**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Registry.js?ref_type=heads) 
+### [modules/Registry](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Registry.js?ref_type=heads) 
 - создается точкой входа Remplanner3D
-- Реестр данных для моделей для добавления в квартиру пользователя. window.global_visual_data - серверные данные зашитые в страницу с бэка 
+- Реестр данных для моделей для добавления в квартиру пользователя. `**window.global_visual_data**` - серверные данные зашитые в страницу с бэка 
 - Отдает верстку для [systems/**UserInterface**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/UserInterface.js?ref_type=heads) каталогов элементов 
 
 
