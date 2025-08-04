@@ -10,7 +10,8 @@
 
 <details> 
 <summary>2.1 Сдвиг текстуры пользователем</summary>
-   
+
+
 1. Пользователь меняет сдвиг текстуры.
 2. `systems/UserInterface/panels/PanelMaterials` слушает изменение и обновляет своё состояние.
 3. Панель проверяет текущий фокус элемента через `systems/Selector` и отправляет событие **`skinChangeTexture`** медиатору.
@@ -22,6 +23,7 @@
 
 <details>
 <summary>2.2. Добавление декора</summary>
+
 
 1. В `systems/UserInterface` на кнопку **Добавить декор** вешается обработчик, открывающий `systems/UserInterface/panels/PanelDecor`.
 2. На HTML‑элемент картинки декора через `systems/UserInterface/InterfaceActions` вешается событие **`decorCreate`**.
