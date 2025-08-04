@@ -8,18 +8,15 @@
 
 ## 2. Примеры сценариев поведения
 
-<details> 
-<summary>2.1 ***Сдвиг текстуры пользователем***</summary>
+**2.1 Сдвиг текстуры пользователем**
 
-   
 1. Пользователь меняет сдвиг текстуры.
-2. `systems/UserInterface/panels/PanelMaterials` слушает изменение и обновляет своё состояние.
-3. Панель проверяет текущий фокус элемента через `systems/Selector` и отправляет событие **`skinChangeTexture`** медиатору.
-4. `modules/Skin` перехватывает событие и передаёт его в `system/Graphics/Entities`.
-5. `system/Graphics/Entities` меняет материал с помощью `system/Graphics/Materials`.
-6. `modules/Skin` посылает событие **`prjChange`** в `modules/Project`.
-7. `modules/Project` фиксирует, что проект изменён.
-</details>
+1. `systems/UserInterface/panels/PanelMaterials` слушает изменение и обновляет своё состояние.
+1. Панель проверяет текущий фокус элемента через `systems/Selector` и отправляет событие **`skinChangeTexture`** медиатору.
+1. `modules/Skin` перехватывает событие и передаёт его в `system/Graphics/Entities`.
+1. `system/Graphics/Entities` меняет материал с помощью `system/Graphics/Materials`.
+1. `modules/Skin` посылает событие **`prjChange`** в `modules/Project`.
+1. `modules/Project` фиксирует, что проект изменён.
 
 <details>
 <summary>2.2. Добавление декора</summary>
