@@ -105,6 +105,15 @@
 - сохраняет пользовательские ракурсы камер в LocalStorage и подтягивает оттуда
 
 
+[modules/**Decor**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Decor/Decor.js?ref_type=heads) 
+- создается точкой входа Remplanner3D 
+- создает и при помощи [Engine/syatems/**Graphics**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/systems/Graphics/Graphics.js?ref_type=heads) и добавляет в сцену меши декора
+
+   [modules/Decor/**Placement**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Decor/Placement/Placement.js?ref_type=heads)
+   - отвечает за перемещение декора
+
+    [modules/Decor/**Lair**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Decor/Lair.js?ref_type=heads)
+    - отвечает за поверхности для размещения декора
   
 
 
