@@ -6,6 +6,7 @@
 - **Modules** создаются напрямую в приложении.
 - **Systems** создаются динамическим импортом из конфигурационных файлов в зависимости от режима (`dev` / `prod`) — это помогает не раздувать итоговый бандл.
 
+
 ## 2. Примеры сценариев поведения
 
 **2.1 Сдвиг текстуры пользователем**
@@ -16,6 +17,7 @@
 1. [system/Graphics/**Entities**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/systems/Graphics/Entities.js?ref_type=heads) меняет материал с помощью [system/Graphics/**Materials**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/systems/Graphics/Materials.js?ref_type=heads).
 1. [modules/**Skin**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Skin/Skin.js?ref_type=heads) посылает событие *prjChange* в **Project**.
 1. [modules/**Project**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Project/Project.js?ref_type=heads) фиксирует, что проект изменён.
+
 
 **2.2. Добавление декора**
 
@@ -35,6 +37,7 @@
    - В режиме **ROTATE** `mouseMove` вращает меш.
    - На `mouseUp` генерируется событие **`prjChange`** (сохранить проект).
 1. [modules/**Project**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Project/Project.js?ref_type=heads) фиксирует изменение проекта.
+
 
 ## 3. Архитектура приложения
 
@@ -61,6 +64,7 @@
 - По конфигу [**RPlanner3D-cfg**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/RPlanner3D-cfg.js?ref_type=heads) создаёт все **systems** (например `systems/**UserInterface**`).
 - Все `systems` изолированы и общаются через **медиатор**.
 
+
 ### 3.2 Modules создаваемые в [Remplanner3D](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/RPlanner3D.js?ref_type=heads)
 
 [modules/**Application**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Application.js?ref_type=heads)	
@@ -70,24 +74,30 @@
 - создает эффекты постпроцессинга в зависимости от аппаратной поддержки 
 - `.isSandbox` = window['rplanner_sandbox'] флаг не слать алерты на реальный сервер
 
+
 [modules/**Registry**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Registry.js?ref_type=heads)
 - создается точкой входа Remplanner3D
 - Реестр данных для моделей для добавления в квартиру пользователя. `**window.global_visual_data**` - серверные данные зашитые в страницу с бэка 
 - Отдает верстку для [systems/**UserInterface**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/UserInterface.js?ref_type=heads) каталогов элементов 
+
 
 [modules/**Project**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Project/Project.js?ref_type=heads)
 - создается точкой входа Remplanner3D
 - создает класс [modules/Project/**ProjectSource**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Project/ProjectSource.js?ref_type=heads) в котором происходит загрузка и валидация проекта пользователя
 - хранит данные проекта квартиры пользователя
 
+
    [modules/Project/**ProjectSource**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Project/ProjectSource.js?ref_type=heads) 
    - подгрузка и валидация проекта квартиры пользователя
+
 
    [modules/Project/**OldVersion**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Project/OldVersion.js?ref_type=heads)
 	- конвертация серверных сохраненных данных в формат удобный приложению
 
+
    [modules/Project/**SaveProject**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Project/ProjectSave.js?ref_type=heads)
    - создание объекта текущих изменений проекта пользователя и отправка на сервер  
+
 
 [modules/**Mode**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Mode.js?ref_type=heads) 
 - создается точкой входа Remplanner3D
