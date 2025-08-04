@@ -56,8 +56,8 @@
 
 ### 3.2. **Engine**
 
-- Создаётся точкой входа `Remplanner3D`.
-- По конфигу `remplanner-cfg` создаёт все **systems** (например `systems/UserInterface`).
+- Создаётся точкой входа [Remplanner3D](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/RPlanner3D.js?ref_type=heads).
+- По конфигу [**RPlanner3D-cfg**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/RPlanner3D-cfg.js?ref_type=heads) создаёт все **systems** (например `systems/UserInterface`).
 - Все systems изолированы и общаются через **медиатор**.
 - Предоставляет API для создания мешей.
 
