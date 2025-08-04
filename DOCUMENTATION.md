@@ -6,9 +6,9 @@
 - **Modules** создаются напрямую в приложении.
 - **Systems** создаются динамическим импортом из конфигурационных файлов в зависимости от режима (`dev` / `prod`) — это помогает не раздувать итоговый бандл.
 
-## 1. Примеры сценариев поведения
+## 2. Примеры сценариев поведения
 
-**1.1 Сдвиг текстуры пользователем**
+**2.1 Сдвиг текстуры пользователем**
 
 1. [systems/**UserInterface**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/UserInterface.js?ref_type=heads) вешает событие на инпут и при изменении пользователем свойства дергает метод в **PanelMaterials**  
 1. [systems/UserInterface/sections/**PanelMaterials**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/sections/PanelMaterials.js?ref_type=heads) запрашивает у [systems/**Selector**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/Selector/Selector.js?ref_type=heads) текущий фокус и отправляет событие *skinChangeTexture* медиатору.
@@ -17,7 +17,7 @@
 1. [modules/**Skin**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Skin/Skin.js?ref_type=heads) посылает событие *prjChange* в **Project**.
 1. [modules/**Project**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Project/Project.js?ref_type=heads) фиксирует, что проект изменён.
 
-**1.1. Добавление декора**
+**2.2. Добавление декора**
 
 1. В [systems/**UserInterface**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/UserInterface.js?ref_type=heads) на кнопку **Добавить декор** вешается обработчик, открывающий [systems/UserInterface/sections/**PanelDecor**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/sections/PanelDecor.js?ref_type=heads).
 1. На HTML‑элемент картинки декора через [systems/UserInterface/InterfaceActions](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/InterfaceActions.js?ref_type=heads) вешается событие *decorCreate*.
@@ -36,22 +36,22 @@
    - На `mouseUp` генерируется событие **`prjChange`** (сохранить проект).
 1. [modules/**Project**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Project/Project.js?ref_type=heads) фиксирует изменение проекта.
 
-## 1. Архитектура приложения
+## 3. Архитектура приложения
 
-### 1.1. [Remplanner3D](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/RPlanner3D.js?ref_type=heads)
+### 3.1. [Remplanner3D](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/RPlanner3D.js?ref_type=heads)
 - Точка точка входа в приложение
 - Читает сонфог [**RPlanner3D-cfg**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/RPlanner3D-cfg.js?ref_type=heads) приложения.
 - Создаёт экземпляры:
    - [modules/**Application**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Application.js?ref_type=heads)
    - [modules/**Registry**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Registry.js?ref_type=heads)
-   - [modules/**Project**]
-   - [modules/**Mode**]
-   - [modules/**Decor**]
-   - [modules/**Skin**]
-   - [modules/**Entourage**]
-   - [modules/**Apartments**]
-   - [modules/**Spatium**]
-   - [**Engine**]
+   - [modules/**Project**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Project/Project.js?ref_type=heads)
+   - [modules/**Mode**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Mode.js?ref_type=heads)
+   - [modules/**Decor**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Decor/Decor.js?ref_type=heads)
+   - [modules/**Skin**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Skin/Skin.js?ref_type=heads)
+   - [modules/**Entourage**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Entourage/Entourage.js?ref_type=heads)
+   - [modules/**Apartments**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Apartments.js?ref_type=heads)
+   - [modules/**Spatium**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Spatium/Spatium.js?ref_type=heads)
+   - [**Engine**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/Engine.js?ref_type=heads)
 
 
 ### 3.2. **Engine**
