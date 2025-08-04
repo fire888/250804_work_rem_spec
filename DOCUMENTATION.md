@@ -69,6 +69,12 @@
 - создает эффекты постпроцессинга в зависимости от аппаратной поддержки 
 - `.isSandbox` = window['rplanner_sandbox'] флаг не слать алерты на реальный сервер
 
+### [modules/**Registry**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Registry.js?ref_type=heads) 
+- создается точкой входа Remplanner3D
+- Реестр данных для моделей для добавления в квартиру пользователя. window.global_visual_data - серверные данные зашитые в страницу с бэка 
+- Отдает верстку для [systems/**UserInterface**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/UserInterface.js?ref_type=heads) каталогов элементов 
+
+
 | Модуль | Назначение / особенности |
 |--------|-------------------------|
 | `modules/Application` | Хранит права пользователя, слушает ошибки, отправляет отчёты. Создаёт пост‑процесс эффекты в зависимости от железа. Флаг `.isSandbox = window['rplanner_sandbox']` отключает отправку алертов на прод. |
