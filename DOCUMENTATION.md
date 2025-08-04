@@ -18,27 +18,24 @@
 1. `modules/Skin` посылает событие **`prjChange`** в `modules/Project`.
 1. `modules/Project` фиксирует, что проект изменён.
 
-<details>
-<summary>2.2. Добавление декора</summary>
-
+**2.2. Добавление декора**
 
 1. В `systems/UserInterface` на кнопку **Добавить декор** вешается обработчик, открывающий `systems/UserInterface/panels/PanelDecor`.
-2. На HTML‑элемент картинки декора через `systems/UserInterface/InterfaceActions` вешается событие **`decorCreate`**.
-3. `modules/Decor` перехватывает **`decorCreate`**, подгружает модель через `modules/Models`.
-4. `modules/Models` бросает событие **`tmpLoadGltf`** в `Engine/systems/Graphics`.
-5. `modules/Decor/Placement` выравнивает модель с помощью `modules/Decor/Lair` и инициирует событие **`plcDecorAdd`**.
-6. Далее `modules/Decor/Placement`:
+1. На HTML‑элемент картинки декора через `systems/UserInterface/InterfaceActions` вешается событие **`decorCreate`**.
+1. `modules/Decor` перехватывает **`decorCreate`**, подгружает модель через `modules/Models`.
+1. `modules/Models` бросает событие **`tmpLoadGltf`** в `Engine/systems/Graphics`.
+1. `modules/Decor/Placement` выравнивает модель с помощью `modules/Decor/Lair` и инициирует событие **`plcDecorAdd`**.
+1. Далее `modules/Decor/Placement`:
    - ждёт от `systems/Selector` смены активного 3D‑меша;
    - отправляет событие **`grRaySetByPlane`**;
    - переходит в режим **PLACE**.
-7. `Engine/systems/Graphics/Raycast` задаёт поверхность для размещения.
-8. В режиме **PLACE** `modules/Decor/Placement` (подписка на `mouseMove`) двигает меш по квартире.
-9. На `mouseClick` — если режим **PLACE**, перемещение завершается.
-10. На `mouseDown` — если режим **NONE**, добавляется круг поворота.
-11. В режиме **ROTATE** `mouseMove` вращает меш.
-12. На `mouseUp` генерируется событие **`prjChange`** (сохранить проект).
-13. `modules/Project` фиксирует изменение проекта.
-</details>
+1. `Engine/systems/Graphics/Raycast` задаёт поверхность для размещения.
+1. В режиме **PLACE** `modules/Decor/Placement` (подписка на `mouseMove`) двигает меш по квартире.
+1. На `mouseClick` — если режим **PLACE**, перемещение завершается.
+1. На `mouseDown` — если режим **NONE**, добавляется круг поворота.
+1. В режиме **ROTATE** `mouseMove` вращает меш.
+1. На `mouseUp` генерируется событие **`prjChange`** (сохранить проект).
+1. `modules/Project` фиксирует изменение проекта.
 
 ## 3. Архитектура приложения
 
