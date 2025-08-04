@@ -8,7 +8,8 @@
 
 ## 2. Примеры сценариев поведения
 
-### 2.1. Сдвиг текстуры пользователем
+<details> 
+<summary>### 2.1. Сдвиг текстуры пользователем</summary>
 
 1. Пользователь меняет сдвиг текстуры.
 2. `systems/UserInterface/panels/PanelMaterials` слушает изменение и обновляет своё состояние.
@@ -17,6 +18,7 @@
 5. `system/Graphics/Entities` меняет материал с помощью `system/Graphics/Materials`.
 6. `modules/Skin` посылает событие **`prjChange`** в `modules/Project`.
 7. `modules/Project` фиксирует, что проект изменён.
+</details>
 
 ### 2.2. Добавление декора
 
