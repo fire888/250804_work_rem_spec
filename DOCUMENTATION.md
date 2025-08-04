@@ -180,6 +180,20 @@
 	- Набор вспомогательных методов создания геометрии для всех классов стен 
 
 
+[modules/Portal](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Portal/Portal.js?ref_type=heads) 
+- создается в modules/Apartments
+- Создает внутренние откосы, окна, двери   
+- пользуется методами modules/Wall/WallFaces, modules/Wall/WallGeometries
+- добавляет в сцену пустые проемы, двери и окна
+
+
+	[modules/Portal/**PortalFrame**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Portal/PortalFrame.js?ref_type=heads)
+	- хранит данные о порталах
+	- набор статических методов создания данных для Окон и Дверей
+
+
+	[modules/Portal/**PortalSlopes**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Portal/PortalSlopes.js?ref_type=heads)
+	- набор статических методов создания откосов
    
 
 
