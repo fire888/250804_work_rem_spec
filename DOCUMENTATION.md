@@ -39,9 +39,9 @@
 1. [modules/**Project**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Project/Project.js?ref_type=heads) фиксирует изменение проекта.
 
 
-## 3. Архитектура приложения
+### 3 Классы 
 
-### 3.1 Основные узлы
+### 3.1 Основные файлы
 
 [**Remplanner3D**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/RPlanner3D.js?ref_type=heads)
 - Точка точка входа в приложение
@@ -143,7 +143,7 @@
 - создает экземпляры modules/Walls, modules/Ceiling, modules/Portal, modules/Interior, modules/Floor, modules/PlinthsFloor, modules/PlinthsCeiling
 
 
-### 3.3 Модули создаваемые в `modules/Apartments`
+### 3.3 Modules создаваемые в `modules/Apartments`
 
 [modules/**Wall**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Wall/Wall.js?ref_type=heads) 
 - создается в modules/Apartments
@@ -305,7 +305,7 @@
 - Набор методов для выбора 3д модели под мышью
 
 
-## 3.8 ОПИСАНИЕ systems/UserInterface.
+## 3.8 systems/UserInterface более подробное.
 
 
 [systems/**UserInterface**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/UserInterface.js?ref_type=heads) 
@@ -317,9 +317,7 @@
 
 
 
-
-
-## 7. Аббревиатуры событий медиатора
+## 4. Аббревиатуры событий медиатора
 
 | Сокращение | Значение |
 |------------|----------|
