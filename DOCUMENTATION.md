@@ -19,7 +19,7 @@
 
 **2.2. Добавление декора**
 
-1. В `systems/UserInterface` на кнопку **Добавить декор** вешается обработчик, открывающий `systems/UserInterface/panels/PanelDecor`.
+1. В [systems/**UserInterface**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/UserInterface.js?ref_type=heads) на кнопку **Добавить декор** вешается обработчик, открывающий [systems/UserInterface/sections/**PanelDecor**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/sections/PanelDecor.js?ref_type=heads).
 1. На HTML‑элемент картинки декора через `systems/UserInterface/InterfaceActions` вешается событие **`decorCreate`**.
 1. `modules/Decor` перехватывает **`decorCreate`**, подгружает модель через `modules/Models`.
 1. `modules/Models` бросает событие **`tmpLoadGltf`** в `Engine/systems/Graphics`.
