@@ -80,6 +80,10 @@
 - создает класс [modules/Project/**ProjectSource**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Project/ProjectSource.js?ref_type=heads) в котором происходит загрузка и валидация проекта пользователя
 - хранит данные проекта квартиры пользователя
 
+      [modules/Project/**ProjectSource**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Project/ProjectSource.js?ref_type=heads) 
+      - подгрузка и валидация проекта квартиры пользователя
+
+
 
 | Модуль | Назначение / особенности |
 |--------|-------------------------|
