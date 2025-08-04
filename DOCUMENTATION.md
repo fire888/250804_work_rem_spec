@@ -83,13 +83,23 @@
    [modules/Project/**ProjectSource**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Project/ProjectSource.js?ref_type=heads) 
    - подгрузка и валидация проекта квартиры пользователя
 
+   [modules/Project/**OldVersion**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Project/OldVersion.js?ref_type=heads)
+	- конвертация серверных сохраненных данных в формат удобный приложению
+
+   [modules/Project/**SaveProject**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Project/ProjectSave.js?ref_type=heads)
+   - создание объекта текущих изменений проекта пользователя и отправка на сервер  
+
+[modules/**Mode**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Mode.js?ref_type=heads) 
+- создается точкой входа Remplanner3D
+- текущий режим взаимодействия с пользователем (Обычный вид, Ходьба, Скрытие стен).
+- сохраняет пользовательские ракурсы камер в LocalStorage и подтягивает оттуда
+
+
+  
 
 
 | Модуль | Назначение / особенности |
 |--------|-------------------------|
-| `modules/Application` | Хранит права пользователя, слушает ошибки, отправляет отчёты. Создаёт пост‑процесс эффекты в зависимости от железа. Флаг `.isSandbox = window['rplanner_sandbox']` отключает отправку алертов на прод. |
-| `modules/Registry` | Реестр данных для моделей (берёт `window.global_visual_data`). Отдаёт вёрстку каталогов элементов для `systems/UserInterface`. |
-| `modules/Project` | Загружает и валидирует проект (класс `ProjectSource`). Хранит данные квартиры пользователя. |
 | `modules/Mode` | Текущий режим взаимодействия (обычный вид, ходьба, скрытие стен). Сохраняет ракурсы камер в LocalStorage. |
 | `modules/Decor` | Создаёт и добавляет в сцену меши декора. Подмодули: `Placement`, `Lair`. |
 | `modules/Skin` | Управляет материалами элементов сцены. Работает с `options.saveKey`, `options.presetId`, и `modules/Skin/Presets`. |
