@@ -247,7 +247,7 @@
 
 
 [Engine](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/Engine.js?ref_type=heads) 
-- [описание_выше](#3.1-основные-узлы) 
+- [описание_выше](#основные-узлы) 
 
 ## 7. Аббревиатуры событий медиатора
 
