@@ -6,9 +6,9 @@
 - **Modules** создаются напрямую в приложении.
 - **Systems** создаются динамическим импортом из конфигурационных файлов в зависимости от режима (`dev` / `prod`) — это помогает не раздувать итоговый бандл.
 
-## 2. Примеры сценариев поведения
+## 1. Примеры сценариев поведения
 
-**2.1 Сдвиг текстуры пользователем**
+**1.1 Сдвиг текстуры пользователем**
 
 1. [systems/**UserInterface**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/UserInterface.js?ref_type=heads) вешает событие на инпут и при изменении пользователем свойства дергает метод в **PanelMaterials**  
 1. [systems/UserInterface/sections/**PanelMaterials**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/sections/PanelMaterials.js?ref_type=heads) запрашивает у [systems/**Selector**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/Selector/Selector.js?ref_type=heads) текущий фокус и отправляет событие *skinChangeTexture* медиатору.
@@ -17,7 +17,7 @@
 1. [modules/**Skin**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Skin/Skin.js?ref_type=heads) посылает событие *prjChange* в **Project**.
 1. [modules/**Project**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Project/Project.js?ref_type=heads) фиксирует, что проект изменён.
 
-**2.2. Добавление декора**
+**1.1. Добавление декора**
 
 1. В [systems/**UserInterface**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/UserInterface.js?ref_type=heads) на кнопку **Добавить декор** вешается обработчик, открывающий [systems/UserInterface/sections/**PanelDecor**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/sections/PanelDecor.js?ref_type=heads).
 1. На HTML‑элемент картинки декора через [systems/UserInterface/InterfaceActions](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/InterfaceActions.js?ref_type=heads) вешается событие *decorCreate*.
@@ -36,9 +36,9 @@
    - На `mouseUp` генерируется событие **`prjChange`** (сохранить проект).
 1. [modules/**Project**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Project/Project.js?ref_type=heads) фиксирует изменение проекта.
 
-## 3. Архитектура приложения
+## 1. Архитектура приложения
 
-### 3.1. [Remplanner3D](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/RPlanner3D.js?ref_type=heads)
+### 1.1. [Remplanner3D](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/RPlanner3D.js?ref_type=heads)
 - Точка точка входа в приложение
 - Читает сонфог [**RPlanner3D-cfg**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/RPlanner3D-cfg.js?ref_type=heads) приложения.
 - Создаёт экземпляры:
