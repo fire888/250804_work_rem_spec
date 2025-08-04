@@ -145,7 +145,7 @@
 
 ### 3.3 Модули создаваемые в `modules/Apartments`
 
-[modules/Wall](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Wall/Wall.js?ref_type=heads) 
+[modules/**Wall**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Wall/Wall.js?ref_type=heads) 
 - создается в modules/Apartments
 - хранит данные о стенах 
 - создает экземпляры следующих классов
@@ -180,7 +180,7 @@
 	- Набор вспомогательных методов создания геометрии для всех классов стен 
 
 
-[modules/Portal](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Portal/Portal.js?ref_type=heads) 
+[modules/**Portal**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Portal/Portal.js?ref_type=heads) 
 - создается в modules/Apartments
 - Создает внутренние откосы, окна, двери   
 - пользуется методами modules/Wall/WallFaces, modules/Wall/WallGeometries
@@ -213,7 +213,7 @@
 ## 3.5 Systems живут изолированно, общаются через медиатор, создаются из remplanner-cfg в Engine
 
 
-[systems/**UserInterface**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/UserInterface.js?ref_type=heads) 
+[systems/**UserInterface**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/UserInterface.js?ref_type=heads) <a id="user-interface-anchor"> 
 - инитится через remplanner-cfg кнопочная обвязка
 - создает боковые панели [systems/UserInterface/sections](https://gitlab.com/remplanner/visual/-/tree/master/js/3d/src/systems/UserInterface/sections?ref_type=heads)
 - создает миникарту 
@@ -270,7 +270,7 @@
 
 	[Engine/systems/Graphics/**Meshes**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/systems/Graphics/Meshes.js?ref_type=heads)
 	- методы медиатора через Engine/systems/Graphics
-	- `.create(options)` по данным создает геометрию в Graphics/Geometries, по данным создает материал в Graphics/Materials, оздает меш, добавляет меш в сцену через Graphics/Entities, регистрирует в Graphics/SharedData  
+	- `.create(options)` по данным создает геометрию в Graphics/Geometries, по данным создает материал в Graphics/Materials, создает меш, добавляет меш в сцену через Graphics/Entities, регистрирует в Graphics/SharedData  
 		- `options.userData.fixed = true` меш не чекается селектором
 		- `options.userData.rayObstruct = true` сквозь меш нельзя выбрать предмет 
 		- `options.userData.entity.roomId = ‘room_id_mesh_in’` скрывает меш при покомнатном просмотре не принадлежащий текущей комнате
@@ -280,30 +280,40 @@
 		- `options.material.group = ‘group_unique_name’` при изменении материала у одного члена группы с этим айди, меняется материал у всех элементов с этим айди в свойстве группы материала   
 
 
-
-Engine/systems/Graphics/SceneBasics методы медиатора через Engine/systems/Graphics
-Набор методов для создания и добавления в сцену вспомогательных объектов
-(Groups, Helpers, Lights..) 
-
-Engine/systems/Graphics/Entities методы медиатора через Engine/systems/Graphics
-Набор методов для трансформации мешей, замены их геометрии и материалов, добавления к родителю. Каждый метод получает данные, берет меш из Graphics/SharedData и изменяет его.
-
-Engine/systems/Graphics/Geometries методы медиатора через Engine/systems/Graphics
-Набор методов для создания и модификации геометрии
-
-Engine/systems/Graphics/Materials методы медиатора через Engine/systems/Graphics
-Набор методов для создания и модификации материалов
-
-	Engine/systems/Graphics/Raycast методы медиатора через Engine/systems/Graphics
-Набор методов для выбора 3д модели под мышью
+[Engine/systems/Graphics/**SceneBasics**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/systems/Graphics/SceneBasics.js?ref_type=heads) 
+- методы медиатора через Engine/systems/Graphics
+- Набор методов для создания и добавления в сцену вспомогательных объектов (Groups, Helpers, Lights..) 
 
 
-ОПИСАНИЕ systems/UserInterface.
+[Engine/systems/Graphics/**Entities**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/systems/Graphics/Entities.js?ref_type=heads)
+- методы медиатора через Engine/systems/Graphics
+- Набор методов для трансформации мешей, замены их геометрии и материалов, добавления к родителю. Каждый метод получает данные, берет меш из Graphics/SharedData и изменяет его.
 
-systems/UserInterface описание выше
 
-systems/UserInterface/Elements
-Набор методов для модификации html, общие для всего UserInterface
+[Engine/systems/Graphics/Geometries](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/systems/Graphics/Geometries.js?ref_type=heads) 
+- методы медиатора через Engine/systems/Graphics
+- Набор методов для создания и модификации геометрии
+
+
+[Engine/systems/Graphics/**Materials**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/systems/Graphics/Materials.js?ref_type=heads) 
+- методы медиатора через Engine/systems/Graphics
+- Набор методов для создания и модификации материалов
+
+
+[Engine/systems/Graphics/**Raycast**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/systems/Graphics/Raycast.js?ref_type=heads)
+- методы медиатора через Engine/systems/Graphics
+- Набор методов для выбора 3д модели под мышью
+
+
+## 3.8 ОПИСАНИЕ systems/UserInterface.
+
+
+[systems/**UserInterface**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/UserInterface.js?ref_type=heads) 
+- [описание выше](#user-interface-ancho)
+
+
+	[systems/UserInterface/**Elements**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/systems/UserInterface/Elements.js?ref_type=heads)
+	- Набор методов для модификации html, общие для всего UserInterface
 
 
 
