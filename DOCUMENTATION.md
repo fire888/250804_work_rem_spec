@@ -41,7 +41,7 @@
 
 ## 3. Архитектура приложения
 
-## 3.1 Основные узлы
+### 3.1 Основные узлы
 
 [**Remplanner3D**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/RPlanner3D.js?ref_type=heads)
 - Точка точка входа в приложение
@@ -143,8 +143,7 @@
 - создает экземпляры modules/Walls, modules/Ceiling, modules/Portal, modules/Interior, modules/Floor, modules/PlinthsFloor, modules/PlinthsCeiling
 
 
-#### 3.3 Модули создаваемые в `modules/Apartments`
-
+### 3.3 Модули создаваемые в `modules/Apartments`
 
 [modules/Wall](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Wall/Wall.js?ref_type=heads) 
 - создается в modules/Apartments
@@ -185,11 +184,7 @@
 
 
 
-- **Walls**
-  - `WallNiches` — ниши
-  - `WallMoldings` — молдинги
-  - `WallFaces`, `WallCaps`, `Generators/WallGlass` — геометрия стен
-  - `WallGeometry` — вспомогательные методы
+
 - **Portal**
   - `PortalFrame`, `PortalSlopes` — окна, двери, проёмы
 - **Ceiling** — потолки
