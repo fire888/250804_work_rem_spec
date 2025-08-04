@@ -41,7 +41,7 @@
 
 ### 3 Классы 
 
-### 3.1 Основные файлы
+#### 3.1 Основные файлы
 
 [**Remplanner3D**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/RPlanner3D.js?ref_type=heads)
 - Точка точка входа в приложение
@@ -65,7 +65,7 @@
 - Все `systems` изолированы и общаются через **медиатор**.
 
 
-### 3.2 Modules создаваемые в [Remplanner3D](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/RPlanner3D.js?ref_type=heads)
+#### 3.2 Modules создаваемые в [Remplanner3D](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/RPlanner3D.js?ref_type=heads)
 
 [modules/**Application**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Application.js?ref_type=heads)	
 - создается точкой входа Remplanner3D
@@ -143,7 +143,7 @@
 - создает экземпляры modules/Walls, modules/Ceiling, modules/Portal, modules/Interior, modules/Floor, modules/PlinthsFloor, modules/PlinthsCeiling
 
 
-### 3.3 Modules создаваемые в `modules/Apartments`
+#### 3.3 Modules создаваемые в `modules/Apartments`
 
 [modules/**Wall**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Wall/Wall.js?ref_type=heads) 
 - создается в modules/Apartments
