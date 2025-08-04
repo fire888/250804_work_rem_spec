@@ -270,20 +270,14 @@
 
 	[Engine/systems/Graphics/**Meshes**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/systems/Graphics/Meshes.js?ref_type=heads)
 	- методы медиатора через Engine/systems/Graphics
-	- `.create(options)`  
-		- по данным создает геометрию в Graphics/Geometries, 
-		- по данным создает материал в Graphics/Materials, 
-		- создает меш, 
-		- добавляет меш в сцену через Graphics/Entities
-		- регистрирует в Graphics/SharedData  
-		`options.userData.fixed = true` меш не чекается селектором
-		`options.userData.rayObstruct = true` сквозь меш нельзя выбрать предмет 
-		`options.userData.entity.roomId = ‘room_id_mesh_in’` скрывает меш при покомнатном просмотре не принадлежащий текущей комнате
-		`options.name = ‘mesh_unique_name’` служит для применения сохраненного пользователем материала при перезагрузке 
-		`options.material.saveKey = [‘mesh_unique_name’, ‘mesh_unique_name_2’]` применяет при перезагрузке материалы к мешам по имени
-		`options.material.presetId = ‘1262’` значение это ключ из хранилища Registry.#materials
-		`options.material.group = ‘group_unique_name’` при изменении материала у одного члена группы с этим айди, меняется материал у всех   
-		`THREE.Group.name = ‘group_name’` 
+	- `.create(options)` по данным создает геометрию в Graphics/Geometries, по данным создает материал в Graphics/Materials, оздает меш, добавляет меш в сцену через Graphics/Entities, регистрирует в Graphics/SharedData  
+		- `options.userData.fixed = true` меш не чекается селектором
+		- `options.userData.rayObstruct = true` сквозь меш нельзя выбрать предмет 
+		- `options.userData.entity.roomId = ‘room_id_mesh_in’` скрывает меш при покомнатном просмотре не принадлежащий текущей комнате
+		- `options.name = ‘mesh_unique_name’` служит для применения сохраненного пользователем материала при перезагрузке 
+		- `options.material.saveKey = [‘mesh_unique_name’, ‘mesh_unique_name_2’]` применяет при перезагрузке материалы к мешам по имени
+		- `options.material.presetId = ‘1262’` значение это ключ из хранилища Registry.#materials
+		- `options.material.group = ‘group_unique_name’` при изменении материала у одного члена группы с этим айди, меняется материал у всех элементов с этим айди в свойстве группы материала   
 
 
 
