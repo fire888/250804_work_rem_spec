@@ -109,11 +109,14 @@
 - создается точкой входа Remplanner3D 
 - создает и при помощи [Engine/syatems/**Graphics**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/Engine/systems/Graphics/Graphics.js?ref_type=heads) и добавляет в сцену меши декора
 
+
    [modules/Decor/**Placement**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Decor/Placement/Placement.js?ref_type=heads)
    - отвечает за перемещение декора
 
+
     [modules/Decor/**Lair**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Decor/Lair.js?ref_type=heads)
     - отвечает за поверхности для размещения декора
+
   
 [modules/**Skin**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Skin/Skin.js?ref_type=heads) 
 - создается точкой входа Remplanner3D
@@ -127,23 +130,60 @@
 - создается точкой входа Remplanner3D
 - создает студию для рендера
 
+
 [modules/**Spatium**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Spatium/Spatium.js?ref_type=heads) 
 - создается точкой входа Remplanner3D
 - рендер в картинку 
 - выгрузка модели квартиры .glb
+
   
+[modules/**Apartments**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Apartments.js?ref_type=heads) 
+- создается точкой входа Remplanner3D
+- создает коробку квартиры
+- создает экземпляры modules/Walls, modules/Ceiling, modules/Portal, modules/Interior, modules/Floor, modules/PlinthsFloor, modules/PlinthsCeiling
 
 
-| Модуль | Назначение / особенности |
-|--------|-------------------------|
-| `modules/Mode` | Текущий режим взаимодействия (обычный вид, ходьба, скрытие стен). Сохраняет ракурсы камер в LocalStorage. |
-| `modules/Decor` | Создаёт и добавляет в сцену меши декора. Подмодули: `Placement`, `Lair`. |
-| `modules/Skin` | Управляет материалами элементов сцены. Работает с `options.saveKey`, `options.presetId`, и `modules/Skin/Presets`. |
-| `modules/Entourage` | Создаёт студию для рендера. |
-| `modules/Spatium` | Рендер в картинку, экспорт квартиры в `.glb`. |
-| `modules/Apartments` | Генерирует «коробку» квартиры и создаёт под‑модули стен, потолка, пола и т. д. |
+#### 3.3 Модули создаваемые в `modules/Apartments`
 
-#### 3.3.1. Подмодули `modules/Apartments`
+
+[modules/Wall](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Wall/Wall.js?ref_type=heads) 
+- создается в modules/Apartments
+- хранит данные о стенах 
+- создает экземпляры следующих классов
+
+
+	[modules/Wall/**WallNiches**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Wall/WallNiches.js?ref_type=heads)
+	- создает Ниши 
+	- хранит данные о нишах
+
+
+	[modules/Wall/**WallMoldings**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Wall/WallMoldings.js?ref_type=heads)
+	- создает Молдинги 
+	- хранит данные о молдингах
+
+
+ - пользуется следующими методами
+
+
+   	[modules/Wall/**WallFaces**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Wall/WallFaces.js?ref_type=heads)
+   	- создает, добавляет стены
+
+  
+   	[modules/Wall/**WallCaps**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Wall/WallCaps.js?ref_type=heads)
+   	- создает, добавляет верх стен
+
+
+      	[modules/Wall/Generators/**WallGlass**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Wall/Generators/WallGlass.js?ref_type=heads)
+  	- создает, добавляет стеклянные стены  
+
+
+	[modules/Wall/**WallGeometry**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Wall/WallGeometry.js?ref_type=heads)
+	- Набор вспомогательных методов создания геометрии для всех классов стен 
+
+
+   
+
+
 
 - **Walls**
   - `WallNiches` — ниши
