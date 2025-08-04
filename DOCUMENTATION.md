@@ -10,7 +10,6 @@
 
 <details> 
 <summary>2.1 Сдвиг текстуры пользователем</summary>
----
    
 1. Пользователь меняет сдвиг текстуры.
 2. `systems/UserInterface/panels/PanelMaterials` слушает изменение и обновляет своё состояние.
@@ -21,7 +20,8 @@
 7. `modules/Project` фиксирует, что проект изменён.
 </details>
 
-### 2.2. Добавление декора
+<details>
+<summary>2.2. Добавление декора</summary>
 
 1. В `systems/UserInterface` на кнопку **Добавить декор** вешается обработчик, открывающий `systems/UserInterface/panels/PanelDecor`.
 2. На HTML‑элемент картинки декора через `systems/UserInterface/InterfaceActions` вешается событие **`decorCreate`**.
@@ -39,7 +39,7 @@
 11. В режиме **ROTATE** `mouseMove` вращает меш.
 12. На `mouseUp` генерируется событие **`prjChange`** (сохранить проект).
 13. `modules/Project` фиксирует изменение проекта.
-
+</details>
 ---
 
 ## 3. Архитектура приложения
