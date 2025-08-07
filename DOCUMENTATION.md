@@ -334,8 +334,8 @@
 
 ## 5. Описание данных приходящих с сервера
 
-`.items[]` - данные о элементах декора, светильниках, трубах раскиданных по квартире
-`.walls[]` - данные о стенах  
+- `.items[]` - данные о элементах декора, светильниках, трубах раскиданных по квартире
+- `.walls[]` - данные о стенах  
 
 [Project/**OldVersion**](https://gitlab.com/remplanner/visual/-/blob/master/js/3d/src/modules/Project/OldVersion.js?ref_type=heads)<a id="oldversion-anchor">
 - `rectifyProjectV3` 
